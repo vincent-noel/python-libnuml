@@ -14,13 +14,14 @@ else
 fi
 ROOT_DIR=`dirname $SCRIPTS_DIR`
 
-mkdir $ROOT_DIR/builds
-mkdir $ROOT_DIR/install
+mkdir ${ROOT_DIR}/builds
+mkdir ${ROOT_DIR}/install
 cd $ROOT_DIR/builds
 
 ${SCRIPTS_DIR}/install_libsbml.sh
 ${SCRIPTS_DIR}/install_libnuml.sh
 
+mkdir ${ROOT_DIR}/libnuml
 cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/{libnuml.py,_libnuml.so} ${ROOT_DIR}/libnuml/
 
 cd $EXEC_DIR
