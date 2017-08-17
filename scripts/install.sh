@@ -14,17 +14,23 @@ else
 fi
 ROOT_DIR=`dirname $SCRIPTS_DIR`
 
-mkdir ${ROOT_DIR}/builds
-mkdir ${ROOT_DIR}/install
-cd $ROOT_DIR/builds
+if [ ! -f ${ROOT_DIR}/libnuml/_libnuml.so ]
+then
 
-${SCRIPTS_DIR}/install_libsbml.sh
-${SCRIPTS_DIR}/install_libnuml.sh
+    mkdir ${ROOT_DIR}/builds
+    mkdir ${ROOT_DIR}/install
+    cd $ROOT_DIR/builds
 
-mkdir -p ${ROOT_DIR}/libnuml
-cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/libnuml.py ${ROOT_DIR}/libnuml/__init__.py
-cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/_libnuml.so ${ROOT_DIR}/libnuml/
+    ${SCRIPTS_DIR}/install_libsbml.sh
+    ${SCRIPTS_DIR}/install_libnuml.sh
 
-cd ${EXEC_DIR}
+    mkdir -p ${ROOT_DIR}/libnuml
+    cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/libnuml.py ${ROOT_DIR}/libnuml/__init__.py
+    cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/_libnuml.so ${ROOT_DIR}/libnuml/
+
+    cd ${EXEC_DIR}
+
+fi
+
 
 
