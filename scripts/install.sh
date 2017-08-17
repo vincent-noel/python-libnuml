@@ -21,8 +21,10 @@ cd $ROOT_DIR/builds
 ${SCRIPTS_DIR}/install_libsbml.sh
 ${SCRIPTS_DIR}/install_libnuml.sh
 
-cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/{libnuml.py,_libnuml.so} ${ROOT_DIR}/libnuml/
+mkdir -p ${ROOT_DIR}/libnuml
+cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/libnuml.py ${ROOT_DIR}/libnuml/__init__.py
+cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/_libnuml.so ${ROOT_DIR}/libnuml/
 
-cd $EXEC_DIR
+cd ${EXEC_DIR}
 
 
