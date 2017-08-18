@@ -1,4 +1,4 @@
-# python-libnuml 
+# python-libnuml  [![Build Status](https://travis-ci.org/vincent-noel/python-libnuml.svg?branch=master)](https://travis-ci.org/vincent-noel/python-libnuml)
 Python package for the NuML library, built using latest images from SBML sourceforge repository, NuML Github repositories.
 For more information about NuML, please see [https://github.com/NuML/NuML](https://github.com/NuML/NuML).
 
