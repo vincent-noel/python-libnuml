@@ -8,9 +8,9 @@ apt-get install -y subversion git wget \
 			libcurl4-openssl-dev
 
 
-# Installing cmake update if cmake version < 3.0.2
+# Installing cmake update if cmake version < 3.8.2
 currentver="$(cmake --version | head -n1 | cut -d" " -f 3)"
-requiredver="3.0.2"
+requiredver="3.8.1"
 if [ "$(printf "$requiredver\n$currentver" | sort -V | head -n1)" != "$requiredver" ]; then
     wget https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz
     tar -zxf  cmake-3.8.2-Linux-x86_64.tar.gz -C /opt
@@ -18,15 +18,14 @@ if [ "$(printf "$requiredver\n$currentver" | sort -V | head -n1)" != "$requiredv
     ln -s /opt/cmake-3.8.2-Linux-x86_64/bin/cmake /usr/bin
 fi
 
-# Installing swig update if swig version < 3.0.8
+# Installing swig update if swig version < 3.0.12
 currentver="$(swig -version | head -n 2 | tail -n 1 | cut -d" " -f3)"
-requiredver="3.0.8"
+requiredver="3.0.11"
 if [ "$(printf "$requiredver\n$currentver" | sort -V | head -n1)" != "$requiredver" ]; then
     apt-get install -y libpcre3-dev
-    wget https://downloads.sourceforge.net/project/swig/swig/swig-3.0.8/swig-3.0.8.tar.gz
-    #wget https://downloads.sourceforge.net/project/swig/swig/swig-3.0.12/swig-3.0.12.tar.gz
-    tar -zxf swig-3.0.8.tar.gz
-    cd swig-3.0.8
+    wget https://downloads.sourceforge.net/project/swig/swig/swig-3.0.12/swig-3.0.12.tar.gz
+    tar -zxf swig-3.0.12.tar.gz
+    cd swig-3.0.12
     ./configure
     make
     make install
