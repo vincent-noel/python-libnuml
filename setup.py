@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 from subprocess import call
 from os.path import join, dirname, abspath
 
@@ -15,6 +15,6 @@ setup(
 	license          = "LGPL",
 	author           = "Frank T. Bergmann, Vincent Noel (packaging)",
 	url              = "https://github.com/NuML/NuML/",
-	packages=find_packages(),
-	include_package_data=True
+	py_modules=['libnuml'],
+	data_files=[('../..', ['_libnuml.so'])]
 )
