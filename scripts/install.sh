@@ -26,7 +26,7 @@ then
 
     mkdir -p ${ROOT_DIR}/libnuml
     cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/libnuml.py ${ROOT_DIR}/libnuml/__init__.py
-    cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/_libnuml.so ${ROOT_DIR}/libnuml/
+    cp ${ROOT_DIR}/install/lib/python2.7/site-packages/libnuml/_libnuml.so ${ROOT_DIR}/libnuml/_libnuml.so
 
     cd ${EXEC_DIR}
 
